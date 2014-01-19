@@ -18,11 +18,11 @@ describe OmniAuth::Strategies::BookingSync do
     end
 
     it 'should have the correct authorization url' do
-      subject.client.options[:authorize_url].should eq("https://www.bookingsync.com/oauth/authorize")
+      subject.client.options[:authorize_url].should eq("/oauth/authorize")
     end
 
     it 'should have the correct token url' do
-      subject.client.options[:token_url].should eq('https://www.bookingsync.com/oauth/token')
+      subject.client.options[:token_url].should eq('/oauth/token')
     end
   end
 

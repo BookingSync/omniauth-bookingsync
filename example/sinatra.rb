@@ -1,10 +1,15 @@
-require 'rubygems'
-require 'bundler'
-
-Bundler.setup :default, :development, :example
-require 'sinatra'
-require 'omniauth'
-require 'omniauth-bookingsync'
+begin
+  require 'bundler'
+  Bundler.setup :default, :development, :example
+  require 'sinatra'
+  require 'omniauth-bookingsync'
+rescue LoadError
+  require 'rubygems'
+  require 'bundler'
+  Bundler.setup :default, :development, :example
+  require 'sinatra'
+  require 'omniauth-bookingsync'
+end
 
 use Rack::Session::Cookie
 
