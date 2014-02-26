@@ -31,4 +31,14 @@ describe OmniAuth::Strategies::BookingSync do
       subject.callback_path.should eq('/auth/bookingsync/callback')
     end
   end
+
+  describe '#raw_info' do
+    it 'should fetch account info from api v3' do
+      subject.stub(:access_token => double)
+      response = double(:parsed => {'accounts' => [{'id' => 1}]})
+      subject.access_token.should_receive(:get).with('/api/v3/accounts').
+        and_return(response)
+      subject.raw_info.should eq({'id' => 1})
+    end
+  end
 end

@@ -8,8 +8,22 @@ module OmniAuth
       option :client_options, {
         :site => 'http://www.bookingsync.com/'
       }
+
+      uid { raw_info["id"] }
+
+      info do
+        {
+          :business_name => raw_info['business_name']
+        }
+      end
+
+      def raw_info
+        @raw_info ||= access_token.get('/api/v3/accounts').parsed['accounts'].first
+      end
     end
   end
 end
+
+OAuth2::Response::CONTENT_TYPES['application/vnd.api+json'] ||= :json
 
 OmniAuth.config.add_camelization 'bookingsync', 'BookingSync'
