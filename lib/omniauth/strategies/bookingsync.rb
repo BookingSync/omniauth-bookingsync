@@ -6,7 +6,7 @@ module OmniAuth
       option :name, 'bookingsync'
 
       option :client_options, {
-        :site => 'http://www.bookingsync.com/'
+        :site => 'https://www.bookingsync.com/'
       }
 
       uid { raw_info["id"] }

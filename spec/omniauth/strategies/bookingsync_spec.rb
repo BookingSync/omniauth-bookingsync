@@ -14,7 +14,7 @@ describe OmniAuth::Strategies::BookingSync do
 
   describe '#client' do
     it 'should have the correct site' do
-      subject.client.site.should eq("http://www.bookingsync.com/")
+      subject.client.site.should eq("https://www.bookingsync.com/")
     end
 
     it 'should have the correct authorization url' do
