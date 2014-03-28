@@ -26,6 +26,12 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+### Authorization for selected account
+
+You can pass the `account_id` parameter to the authorization url to request
+authorization for a selected account. For users with multiple accounts,
+this will skip the account selection process and show the accept/deny page.
+
 ## Supported Rubies
 
 OmniAuth BookingSync is tested under 1.8.7, 1.9.2, 1.9.3, 2.0.0, Ruby-head, Ruby Enterprise Edition, JRuby (1.8 and 1.9 mode).

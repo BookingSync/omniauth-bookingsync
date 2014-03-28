@@ -6,8 +6,12 @@ describe OmniAuth::Strategies::BookingSync do
     OmniAuth.config.test_mode = true
   end
 
+  let(:request) { double('Request', :params => {}, :cookies => {}, :env => {}) }
+
   subject do
-    OmniAuth::Strategies::BookingSync.new(nil, @options || {})
+    OmniAuth::Strategies::BookingSync.new(nil, @options || {}).tap do |strategy|
+      allow(strategy).to receive(:request) { request }
+    end
   end
 
   it_should_behave_like 'an oauth2 strategy'
@@ -29,6 +33,13 @@ describe OmniAuth::Strategies::BookingSync do
   describe '#callback_path' do
     it 'should have the correct callback path' do
       subject.callback_path.should eq('/auth/bookingsync/callback')
+    end
+  end
+
+  describe '#authorize_params' do
+    it 'should pass account_id from request params' do
+      request.params['account_id'] = '123'
+      expect(subject.authorize_params[:account_id]).to eq('123')
     end
   end
 

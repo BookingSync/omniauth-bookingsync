@@ -20,6 +20,14 @@ module OmniAuth
       def raw_info
         @raw_info ||= access_token.get('/api/v3/accounts').parsed['accounts'].first
       end
+
+      def authorize_params
+        super.tap do |params|
+          if request.params["account_id"]
+            params[:account_id] = request.params["account_id"]
+          end
+        end
+      end
     end
   end
 end
