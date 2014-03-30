@@ -1,0 +1,33 @@
+# BookingSync OAuth Helper
+
+Small sinatra application to help you get your OAuth Token for your BookingSync Application.
+This is specially useful to play around BookingSync API v3.
+
+## Usage
+
+```
+$ bundle install
+$ bundle exec ruby bookingsync_oauth_helper.rb
+```
+
+Follow the guide until you get your OAuth Token back.
+
+You can then use the [BookingSync API gem](https://github.com/BookingSync/bookingsync-api) to consume the API
+
+Example in IRB console:
+
+```ruby
+require 'bookingsync-api'
+api = BookingSync::API.new(YOUR_OAUTH_TOKEN)
+rentals = api.rentals.first.name
+```
+
+## License
+
+Copyright (c) 2014 Sébastien Grosjean and [BookingSync.com](http://www.bookingsync.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
