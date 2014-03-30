@@ -18,8 +18,9 @@ Example in IRB console:
 
 ```ruby
 require 'bookingsync-api'
+require 'json'
 api = BookingSync::API.new(YOUR_OAUTH_TOKEN)
-rentals = api.rentals.first.name
+api.rentals.first.name
 ```
 
 ## License
