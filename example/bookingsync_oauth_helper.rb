@@ -12,11 +12,11 @@ puts "  https://www.bookingsync.com/en/partners/applications"
 puts ""
 puts "  => Use http://localhost:4567/auth/bookingsync/callback as return URL"
 puts ""
-puts "Enter your Application ID"
-set :application_id, gets.strip
+puts "Enter your Application's Client ID"
+set :client_id, gets.strip
 puts ""
-puts "Enter your Application Secret"
-set :application_secret, gets.strip
+puts "Enter your Application's Client Secret"
+set :client_secret, gets.strip
 puts ""
 puts "-" * 60
 puts "Visit http://localhost:4567".center(60)
@@ -27,7 +27,7 @@ puts ""
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :bookingsync, settings.application_id, settings.application_secret
+  provider :bookingsync, settings.client_id, settings.client_secret
 end
 
 get '/' do
