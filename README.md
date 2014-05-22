@@ -34,7 +34,7 @@ this will skip the account selection process and show the accept/deny page.
 
 ## Supported Rubies
 
-OmniAuth BookingSync is tested under 1.8.7, 1.9.2, 1.9.3, 2.0.0, Ruby-head, Ruby Enterprise Edition, JRuby (1.8 and 1.9 mode).
+OmniAuth BookingSync is tested under 1.8.7, 1.9.2, 1.9.3, 2.0.0, 2.1.0, 2.1.1, Ruby-head, Ruby Enterprise Edition, JRuby (1.8 and 1.9 mode).
 
 [![CI Build
 Status](https://secure.travis-ci.org/BookingSync/omniauth-bookingsync.png)](http://travis-ci.org/BookingSync/omniauth-bookingsync)
