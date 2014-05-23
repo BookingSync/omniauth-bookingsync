@@ -18,6 +18,8 @@ puts ""
 puts "Enter your Application's Client Secret"
 set :client_secret, gets.strip
 puts ""
+puts "Enter your desired scopes (space separated)"
+set :scope, gets.strip
 puts "-" * 60
 puts "Visit http://localhost:4567".center(60)
 puts "-" * 60
@@ -27,7 +29,8 @@ puts ""
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :bookingsync, settings.client_id, settings.client_secret
+  provider :bookingsync, settings.client_id, settings.client_secret,
+    scope: settings.scope
 end
 
 get '/' do
