@@ -6,7 +6,6 @@
 .rbx
 .rvmrc
 .yardoc
-Gemfile.lock
 bin
 coverage*
 doc
