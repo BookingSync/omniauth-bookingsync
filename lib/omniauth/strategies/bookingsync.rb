@@ -1,24 +1,22 @@
-require 'omniauth-oauth2'
+require "omniauth-oauth2"
 
 module OmniAuth
   module Strategies
     class BookingSync < OmniAuth::Strategies::OAuth2
-      option :name, 'bookingsync'
+      option :name, "bookingsync"
 
-      option :client_options, {
-        :site => 'https://www.bookingsync.com/'
-      }
+      option :client_options, site: "https://www.bookingsync.com/"
 
       uid { raw_info["id"] }
 
       info do
         {
-          :business_name => raw_info['business_name']
+          business_name: raw_info["business_name"]
         }
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/api/v3/accounts').parsed['accounts'].first
+        @raw_info ||= access_token.get("/api/v3/accounts").parsed["accounts"].first
       end
 
       def authorize_params
@@ -32,6 +30,6 @@ module OmniAuth
   end
 end
 
-OAuth2::Response::CONTENT_TYPES['application/vnd.api+json'] ||= :json
+OAuth2::Response::CONTENT_TYPES["application/vnd.api+json"] ||= :json
 
-OmniAuth.config.add_camelization 'bookingsync', 'BookingSync'
+OmniAuth.config.add_camelization "bookingsync", "BookingSync"

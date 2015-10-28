@@ -8,19 +8,20 @@ Gem::Specification.new do |gem|
   gem.authors = ["Sebastien Grosjean"]
   gem.email = ["dev@bookingsync.com"]
   gem.homepage = "https://github.com/BookingSync/omniauth-bookingsync"
-  gem.summary = %q{An OmniAuth 1.0 strategy for BookingSync OAuth2 identification.}
-  gem.description = %q{An OmniAuth 1.0 strategy for BookingSync OAuth2 identification.}
+  gem.summary = "An OmniAuth 1.0 strategy for BookingSync OAuth2 identification."
+  gem.description = "An OmniAuth 1.0 strategy for BookingSync OAuth2 identification."
 
-  gem.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  gem.executables = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   gem.files = `git ls-files`.split("\n")
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'omniauth', '~> 1.1'
-  # this constraint is to change in 1.4 braking redirect url generation
+  gem.add_dependency "omniauth", "~> 1.1"
+  # this constraint is to change in 1.4 breaking redirect url generation
   # https://github.com/intridea/omniauth-oauth2/issues/81
-  gem.add_dependency 'omniauth-oauth2', '< 1.4'
+  gem.add_dependency "omniauth-oauth2", "< 1.4"
 
-  gem.add_development_dependency 'rspec', '~> 2.7'
-  gem.add_development_dependency 'rake'
+  gem.add_development_dependency "rspec"
+  gem.add_development_dependency "rake"
+  gem.add_development_dependency "rubocop"
 end
