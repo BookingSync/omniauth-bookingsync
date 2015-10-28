@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BookingSync/omniauth-bookingsync.svg?branch=master)](https://travis-ci.org/BookingSync/omniauth-bookingsync)
+
 # OmniAuth BookingSync
 
 This is an OmniAuth 1.1 strategy for authenticating to BookingSync. To
