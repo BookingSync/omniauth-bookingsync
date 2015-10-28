@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BookingSync/omniauth-bookingsync.svg?branch=master)](https://travis-ci.org/BookingSync/omniauth-bookingsync)
+
 # OmniAuth BookingSync
 
 This is an OmniAuth 1.1 strategy for authenticating to BookingSync. To
@@ -34,7 +36,7 @@ this will skip the account selection process and show the accept/deny page.
 
 ## Supported Rubies
 
-OmniAuth BookingSync is tested under 1.8.7, 1.9.2, 1.9.3, 2.0.0, 2.1.0, 2.1.1, Ruby-head, Ruby Enterprise Edition, JRuby (1.8 and 1.9 mode).
+OmniAuth BookingSync is tested under 2.0, 2.1, 2.2, Ruby-head, JRuby.
 
 [![CI Build
 Status](https://secure.travis-ci.org/BookingSync/omniauth-bookingsync.png)](http://travis-ci.org/BookingSync/omniauth-bookingsync)

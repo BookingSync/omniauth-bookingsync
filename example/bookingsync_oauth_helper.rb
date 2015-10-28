@@ -1,6 +1,6 @@
-require 'sinatra'
-require 'omniauth-bookingsync'
-require 'json'
+require "sinatra"
+require "omniauth-bookingsync"
+require "json"
 
 puts "-" * 60
 puts "BookingSync OAuth helper for API v3".center(60)
@@ -30,10 +30,10 @@ use Rack::Session::Cookie
 
 use OmniAuth::Builder do
   provider :bookingsync, settings.client_id, settings.client_secret,
-    scope: settings.scope
+           scope: settings.scope
 end
 
-get '/' do
+get "/" do
   <<-HTML
 <html>
   <head>
@@ -65,12 +65,12 @@ get '/' do
 HTML
 end
 
-get '/auth/:provider/callback' do
-  content_type 'application/json'
-  request.env['omniauth.auth'].to_hash.to_json
+get "/auth/:provider/callback" do
+  content_type "application/json"
+  request.env["omniauth.auth"].to_hash.to_json
 end
 
-get '/auth/failure' do
-  content_type 'text/plain'
+get "/auth/failure" do
+  content_type "text/plain"
   params[:message]
 end
