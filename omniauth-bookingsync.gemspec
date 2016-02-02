@@ -20,6 +20,7 @@ Gem::Specification.new do |gem|
   # this constraint is to change in 1.4 breaking redirect url generation
   # https://github.com/intridea/omniauth-oauth2/issues/81
   gem.add_dependency "omniauth-oauth2", "< 1.4"
+  gem.add_dependency "oauth2", "1.0"
 
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
