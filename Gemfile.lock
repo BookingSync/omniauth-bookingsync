@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-bookingsync (0.3.0)
+    omniauth-bookingsync (0.3.1)
       oauth2 (= 1.0)
       omniauth (~> 1.1)
       omniauth-oauth2 (< 1.4)
