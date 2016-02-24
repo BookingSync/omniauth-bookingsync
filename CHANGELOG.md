@@ -1,5 +1,7 @@
 #master
 
+* Update example application to work over SSL
+
 # 0.3.1
 
 * Lock oauth2 version to 1.0 due to 1.1 having some breaking changes

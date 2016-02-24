@@ -1,36 +1,13 @@
 require "sinatra"
-require "omniauth-bookingsync"
 require "json"
-
-puts "-" * 60
-puts "BookingSync OAuth helper for API v3".center(60)
-puts "-" * 60
-puts ""
-puts "Requirements:"
-puts "  => Create a BookingSync Application from"
-puts "  https://www.bookingsync.com/en/partners/applications"
-puts ""
-puts "  => Use http://localhost:4567/auth/bookingsync/callback as return URL"
-puts ""
-puts "Enter your Application's Client ID"
-set :client_id, gets.strip
-puts ""
-puts "Enter your Application's Client Secret"
-set :client_secret, gets.strip
-puts ""
-puts "Enter your desired scopes (space separated)"
-set :scope, gets.strip
-puts "-" * 60
-puts "Visit http://localhost:4567".center(60)
-puts "-" * 60
-puts "Press CMD + C to stop"
-puts ""
+require "omniauth-bookingsync"
 
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :bookingsync, settings.client_id, settings.client_secret,
-           scope: settings.scope
+  provider :bookingsync, ENV['BOOKINGSYNC_CLIENT_ID'], ENV['BOOKINGSYNC_CLIENT_SECRET'], {
+    scope: ENV['BOOKINGSYNC_SCOPE']
+  }
 end
 
 get "/" do
@@ -66,7 +43,6 @@ HTML
 end
 
 get "/auth/:provider/callback" do
-  content_type "application/json"
   request.env["omniauth.auth"].to_hash.to_json
 end
 
