@@ -6,6 +6,7 @@
 .rbx
 .rvmrc
 .yardoc
+.ruby-version
 bin
 coverage*
 doc
