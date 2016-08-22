@@ -45,12 +45,37 @@ describe OmniAuth::Strategies::BookingSync do
   end
 
   describe '#raw_info' do
-    it "fetches account info from api v3" do
+    let(:body) { '{"accounts": [{"id": 1}]}' }
+    let(:response) { double("response", headers: headers, status: 200, body: body) }
+
+    before do
       allow(subject).to receive(:access_token).and_return(double)
-      response = double(parsed: { "accounts" => [{ "id" => 1 }] })
       expect(subject.access_token).to receive(:get).with("/api/v3/accounts")
-        .and_return(response)
-      expect(subject.raw_info).to eq("id" => 1)
+        .and_return(OAuth2::Response.new(response))
+    end
+
+    context "when Content-Type not supported" do
+      let(:headers) { { "Content-Type" => "application/foo-bar" } }
+
+      it "blows up with NoMethodError" do
+        expect { subject.raw_info }.to raise_error(NoMethodError)
+      end
+    end
+
+    context "when Content-Type supported" do
+      let(:headers) { { "Content-Type" => "application/vnd.api+json" } }
+
+      it "fetches account info from api v3" do
+        expect(subject.raw_info).to eq("id" => 1)
+      end
+    end
+
+    context "when Content-Type supported" do
+      let(:headers) { { "Content-Type" => "application/json" } }
+
+      it "fetches account info from api v3" do
+        expect(subject.raw_info).to eq("id" => 1)
+      end
     end
   end
 end
