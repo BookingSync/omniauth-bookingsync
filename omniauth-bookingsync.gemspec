@@ -16,11 +16,11 @@ Gem::Specification.new do |gem|
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "omniauth", "~> 1.1"
+  gem.add_dependency "omniauth", "~> 1.6"
   # this constraint is to change in 1.4 breaking redirect url generation
   # https://github.com/intridea/omniauth-oauth2/issues/81
   gem.add_dependency "omniauth-oauth2", "< 1.4"
-  gem.add_dependency "oauth2", "~> 1.2.0"
+  gem.add_dependency "oauth2", "~> 1.3.0"
 
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
