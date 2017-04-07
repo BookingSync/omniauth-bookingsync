@@ -1,7 +1,7 @@
-# 0.5.0
+# 0.4.1
 
-* Update dependancies
-* Drop jRuby support
+* Update dependancies #10
+* Add source line in Gemfile #9
 
 # 0.4.0
 
