@@ -1,5 +1,4 @@
 require "spec_helper"
-require "omniauth-bookingsync"
 
 describe OmniAuth::Strategies::BookingSync do
   before do
@@ -40,7 +39,31 @@ describe OmniAuth::Strategies::BookingSync do
   describe '#authorize_params' do
     it "passes account_id from request params" do
       request.params["account_id"] = "123"
-      expect(subject.authorize_params[:account_id]).to eq("123")
+      expect(subject.authorize_params[:account_id]).to eq 123
+    end
+
+    it "passes _bookingsync_account_id from request params" do
+      request.params["_bookingsync_account_id"] = "123"
+      expect(subject.authorize_params[:account_id]).to eq 123
+    end
+
+    it "passes _bookingsync_account_id and account_id from request params, " +
+    "it use _bookingsync_account_id" do
+      request.params["_bookingsync_account_id"] = "123"
+      request.params["account_id"] = "456"
+      expect(subject.authorize_params[:account_id]).to eq 123
+    end
+
+    it "ignores blank params" do
+      request.params["_bookingsync_account_id"] = ""
+      request.params["account_id"] = "456"
+      expect(subject.authorize_params[:account_id]).to eq 456
+    end
+
+    it "ignores non numeric params" do
+      request.params["_bookingsync_account_id"] = "a"
+      request.params["account_id"] = "b"
+      expect(subject.authorize_params[:account_id]).to be_nil
     end
   end
 

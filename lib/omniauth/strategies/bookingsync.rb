@@ -21,8 +21,14 @@ module OmniAuth
 
       def authorize_params
         super.tap do |params|
-          if request.params["account_id"]
-            params[:account_id] = request.params["account_id"]
+          bookingsync_account_id = OmniAuth::BookingSync::Identifier.new(
+            request.params["_bookingsync_account_id"])
+          account_id = OmniAuth::BookingSync::Identifier.new(request.params["account_id"])
+
+          if bookingsync_account_id.valid?
+            params[:account_id] = bookingsync_account_id.value
+          elsif account_id.valid?
+            params[:account_id] = account_id.value
           end
         end
       end
