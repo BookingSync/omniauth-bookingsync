@@ -1,5 +1,10 @@
 #master
 
+* Add account auto-selection during the authorization process
+
+# 0.4.0
+
+* Update Readme
 * bump oauth2 to 1.2
 * add Ruby 2.3.1 to travis, drop Ruby 2.0 and 2.1 (end of maintenance)
 * Update example application to work over SSL
