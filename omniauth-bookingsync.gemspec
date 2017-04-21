@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.summary = "An OmniAuth 1.0 strategy for BookingSync OAuth2 identification."
   gem.description = "An OmniAuth 1.0 strategy for BookingSync OAuth2 identification."
 
-  gem.executables = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  gem.executables = `git ls-files -- exe/*`.split("\n").map { |f| File.basename(f) }
   gem.files = `git ls-files`.split("\n")
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.require_paths = ["lib"]
