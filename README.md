@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/BookingSync/omniauth-bookingsync.svg?branch=master)](https://travis-ci.org/BookingSync/omniauth-bookingsync)
+[![CI Build
+Status](https://secure.travis-ci.org/BookingSync/omniauth-bookingsync.png)](http://travis-ci.org/BookingSync/omniauth-bookingsync)
 
 # OmniAuth BookingSync
 
