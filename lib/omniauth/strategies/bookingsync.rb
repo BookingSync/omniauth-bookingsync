@@ -21,10 +21,22 @@ module OmniAuth
 
       def authorize_params
         super.tap do |params|
-          if request.params["account_id"]
-            params[:account_id] = request.params["account_id"]
+          bookingsync_account_id = OmniAuth::BookingSync::Identifier.new(
+            request.params["_bookingsync_account_id"])
+          account_id = OmniAuth::BookingSync::Identifier.new(request.params["account_id"])
+
+          if bookingsync_account_id.valid?
+            params[:account_id] = bookingsync_account_id.value
+          elsif account_id.valid?
+            params[:account_id] = account_id.value
           end
         end
+      end
+
+      # Fixes regression in omniauth-oauth2 v1.4.0 by
+      # https://github.com/intridea/omniauth-oauth2/commit/85fdbe117c2a4400d001a6368cc359d88f40abc7
+      def callback_url
+        options[:redirect_uri] || (full_host + script_name + callback_path)
       end
     end
   end
