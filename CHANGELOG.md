@@ -1,5 +1,8 @@
 #master
 
+* Add support for omniauth-oauth2 1.4
+* Update gems dependencies
+* Add Ruby 2.4 to Travis
 * Add account auto-selection during the authorization process
 
 # 0.4.0
