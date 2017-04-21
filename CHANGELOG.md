@@ -1,5 +1,7 @@
 #master
 
+# 0.5.0 - 2017-04-22
+
 * Add support for omniauth-oauth2 1.4
 * Update gems dependencies
 * Add Ruby 2.4 to Travis
