@@ -24,7 +24,7 @@ get "/" do
         padding: 10px 20px;
         font-size: 16px;
         color: #fff;
-        background-color: #1B57AA;
+        background-color: #129ad6;
         text-decoration: none;
         border-radius: 4px;
         margin: 100px auto 0;
