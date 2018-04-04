@@ -25,8 +25,8 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    rack (1.6.5)
-    rack-protection (1.5.3)
+    rack (1.6.9)
+    rack-protection (1.5.5)
       rack
     sinatra (1.4.8)
       rack (~> 1.5)
@@ -43,4 +43,4 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
-   1.14.6
+   1.16.1
