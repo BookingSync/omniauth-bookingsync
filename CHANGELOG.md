@@ -1,4 +1,4 @@
-#master
+# 0.6.0
 
 * Drop support for Ruby 2.2
 * Drop support for omniauth-oauth2 1.3
