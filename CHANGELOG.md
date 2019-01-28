@@ -1,5 +1,6 @@
 #master
 
+* Drop support for Ruby 2.2
 * Drop support for omniauth-oauth2 1.3
 * Add support for omniauth-oauth2 1.6
 * Bump oauth2 ~> 1.4
