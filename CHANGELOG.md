@@ -1,5 +1,7 @@
 #master
 
+* Drop support for omniauth-oauth2 1.3
+* Add support for omniauth-oauth2 1.6
 * Bump oauth2 ~> 1.4
 
 # 0.5.0 - 2017-04-22
