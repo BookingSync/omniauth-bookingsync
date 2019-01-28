@@ -11,5 +11,5 @@ rvm:
   - ruby-head
   - jruby
 gemfile:
-  - gemfiles/omniauth-oauth2-1.4.gemfile
-  - gemfiles/omniauth-oauth2-1.6.gemfile
+  - gemfiles/omniauth-oauth2_1.4.gemfile
+  - gemfiles/omniauth-oauth2_1.6.gemfile
