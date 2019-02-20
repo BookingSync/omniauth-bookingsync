@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-bookingsync (0.5.0)
+    omniauth-bookingsync (0.6.0)
       oauth2
       omniauth
       omniauth-oauth2
@@ -78,4 +78,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   1.16.2
+   1.16.3
