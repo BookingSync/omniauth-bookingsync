@@ -1,3 +1,7 @@
+# 1.0.0
+
+* Breaking change: drop support for JRuby
+
 # 0.6.0
 
 * Drop support for Ruby 2.2
