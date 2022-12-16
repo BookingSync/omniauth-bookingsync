@@ -35,6 +35,10 @@ describe OmniAuth::Strategies::BookingSync do
   end
 
   describe "#callback_path" do
+    before do
+      allow(strategy).to receive(:script_name).and_return("") # as not to depend on Rack env
+    end
+
     it "returns the correct callback path" do
       expect(strategy.callback_path).to eq("/auth/bookingsync/callback")
     end
