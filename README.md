@@ -1,5 +1,4 @@
-[![CI Build
-Status](https://secure.travis-ci.org/BookingSync/omniauth-bookingsync.png)](http://travis-ci.org/BookingSync/omniauth-bookingsync)
+[![CI Build Status](https://github.com/BookingSync/omniauth-bookingsync/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/BookingSync/omniauth-bookingsync/actions/workflows/ci.yml)
 
 # OmniAuth BookingSync
 
@@ -37,10 +36,9 @@ this will skip the account selection process and show the accept/deny page.
 
 ## Supported Rubies
 
-OmniAuth BookingSync is tested under 2.2, 2.3, 2.4, Ruby-head, JRuby.
+OmniAuth BookingSync is tested under 2.7, 3.0, 3.1.
 
-[![CI Build
-Status](https://secure.travis-ci.org/BookingSync/omniauth-bookingsync.png)](http://travis-ci.org/BookingSync/omniauth-bookingsync)
+[![CI Build Status](https://github.com/BookingSync/omniauth-bookingsync/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/BookingSync/omniauth-bookingsync/actions/workflows/ci.yml)
 
 ## License
 
