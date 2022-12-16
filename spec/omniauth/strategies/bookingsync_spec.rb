@@ -26,11 +26,11 @@ describe OmniAuth::Strategies::BookingSync do
     end
 
     it "returns the correct authorization url" do
-      expect(strategy.client.options[:authorize_url]).to eq "/oauth/authorize"
+      expect(strategy.client.options[:authorize_url]).to eq "oauth/authorize"
     end
 
     it "returns the correct token url" do
-      expect(strategy.client.options[:token_url]).to eq "/oauth/token"
+      expect(strategy.client.options[:token_url]).to eq "oauth/token"
     end
   end
 

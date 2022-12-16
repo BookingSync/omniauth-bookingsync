@@ -1,3 +1,9 @@
+# master
+
+* Drop support for rubies prior to 2.7
+* Support rubies 2.7+
+* Add multi_json dependency (gem relied implicitly on it already)
+
 # 1.0.0
 
 * Breaking change: drop support for JRuby
