@@ -16,3 +16,4 @@ rerun.txt
 tags
 tmp
 example/.powenv
+*.lock
